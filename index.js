@@ -17,15 +17,15 @@ for (let i = 0; i < 5; i++) {
       .map(sentense => ({ input: sentense, output: goodOrBad }));
   }
 
-  function callBack1() {
+  function readBadText() {
     fs.readFile('bad.txt', 'utf8', function(err, data) {
       convertToLessons(data, 'bad');
 
-      callBack2();
+      trainBrainAndShowResult();
     });
   }
 
-  function callBack2() {
+  function trainBrainAndShowResult() {
     const lessonsForNet = lessons.good.concat(lessons.bad);
 
     const net = new brain.recurrent.LSTM();
@@ -38,6 +38,6 @@ for (let i = 0; i < 5; i++) {
   fs.readFile('good.txt', 'utf8', function(err, data) {
     convertToLessons(data, 'good');
 
-    callBack1();
+    readBadText();
   });
 }
