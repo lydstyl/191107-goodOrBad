@@ -1,0 +1,14 @@
+{
+  "name": "191107-goodorbad",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "brain.js": "^2.0.0-alpha.9"
+  }
+}
